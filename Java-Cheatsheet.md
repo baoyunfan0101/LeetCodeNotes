@@ -5,8 +5,13 @@
 ## 1. Arrays & Strings
 
 ### Arrays (java.util.Arrays)
+
 ```java
 int[] nums = new int[n];
+
+int[] a, b;
+int[][] grid;
+int n, l, r, x;
 
 Arrays.sort(nums);
 Arrays.sort(nums, l, r);
@@ -30,8 +35,12 @@ nums.length;
 ```
 
 ### String (java.lang.String)
+
 ```java
 String s = "abc";
+
+String t, regex, replacement;
+int i, l, r, fromIndex, x;
 
 s.length();
 s.isEmpty();
@@ -74,8 +83,13 @@ String.valueOf(x);
 ```
 
 ### StringBuilder (java.lang)
+
 ```java
 StringBuilder sb = new StringBuilder();
+
+String str;
+char c;
+int x, codePoint, i, l, r;
 
 sb.append(x);
 sb.append(str);
@@ -108,8 +122,12 @@ sb.toString();
 ## 2. Hash Structures
 
 ### HashMap (java.util.HashMap)
+
 ```java
 Map<Integer, Integer> map = new HashMap<>();
+
+Map<Integer, Integer> other = new HashMap<>();
+int k, v, oldV, newV, x;
 
 map.put(k, v);
 map.putIfAbsent(k, v);
@@ -148,8 +166,12 @@ map.put(x, map.getOrDefault(x, 0) + 1);
 ```
 
 ### HashSet (java.util.HashSet)
+
 ```java
 Set<Integer> set = new HashSet<>();
+
+Set<Integer> other = new HashSet<>();
+int x;
 
 set.add(x);
 set.addAll(other);
@@ -178,8 +200,12 @@ set.hashCode();
 ## 3. List
 
 ### ArrayList (java.util.ArrayList)
+
 ```java
 List<Integer> list = new ArrayList<>();
+
+List<Integer> other = new ArrayList<>();
+int x, i, v, l, r, n;
 
 list.add(x);
 list.add(i, x);
@@ -227,8 +253,12 @@ list.trimToSize();
 ```
 
 ### LinkedList (java.util.LinkedList)
+
 ```java
 LinkedList<Integer> list = new LinkedList<>();
+
+LinkedList<Integer> other = new LinkedList<>();
+int x, i, v, l, r;
 
 list.add(x);
 list.add(i, x);
@@ -294,8 +324,12 @@ list.hashCode();
 ## 4. Queue
 
 ### Queue (java.util.Queue)
+
 ```java
 Queue<Integer> q = new LinkedList<>();
+
+Queue<Integer> other = new LinkedList<>();
+int x;
 
 q.offer(x);
 q.add(x);
@@ -329,8 +363,12 @@ q.hashCode();
 ## 5. Heap
 
 ### PriorityQueue (java.util.PriorityQueue)
+
 ```java
 PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+PriorityQueue<Integer> other = new PriorityQueue<>();
+int x;
 
 pq.offer(x);
 pq.add(x);
@@ -361,6 +399,7 @@ pq.hashCode();
 ```
 
 ### Max Heap
+
 ```java
 PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
 ```
@@ -370,8 +409,12 @@ PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
 ## 6. Stack
 
 ### Stack (use Deque)
+
 ```java
 Deque<Integer> stack = new ArrayDeque<>();
+
+Deque<Integer> other = new ArrayDeque<>();
+int x;
 
 stack.push(x); // addFirst(x)
 stack.pop(); // removeFirst()
@@ -400,8 +443,12 @@ stack.hashCode();
 ## 7. Deque
 
 ### Deque (java.util.ArrayDeque)
+
 ```java
 Deque<Integer> dq = new ArrayDeque<>();
+
+Deque<Integer> other = new ArrayDeque<>();
+int x;
 
 dq.addFirst(x);
 dq.addLast(x);
@@ -452,8 +499,12 @@ dq.hashCode();
 ## 8. Ordered Map / Set
 
 ### TreeMap (java.util.TreeMap)
+
 ```java
 TreeMap<Integer, Integer> map = new TreeMap<>();
+
+TreeMap<Integer, Integer> other = new TreeMap<>();
+int k, v, x, l, r;
 
 map.put(k, v);
 map.putIfAbsent(k, v);
@@ -507,8 +558,12 @@ map.hashCode();
 ```
 
 ### TreeSet (java.util.TreeSet)
+
 ```java
 TreeSet<Integer> set = new TreeSet<>();
+
+TreeSet<Integer> other = new TreeSet<>();
+int x, l, r;
 
 set.add(x);
 set.addAll(other);
@@ -550,7 +605,15 @@ set.hashCode();
 ## 9. Utilities
 
 ### Collections (java.util.Collections)
+
 ```java
+List<Integer> list = new ArrayList<>();
+List<Integer> dest = new ArrayList<>();
+List<Integer> src = new ArrayList<>();
+Collection<Integer> a = new ArrayList<>();
+Collection<Integer> b = new ArrayList<>();
+int x, i, j, n;
+
 Collections.sort(list);
 Collections.sort(list, Collections.reverseOrder());
 
@@ -576,7 +639,11 @@ Collections.disjoint(a, b);
 ```
 
 ### Comparator
+
 ```java
+Integer[][] arr;
+List<Integer> list = new ArrayList<>();
+
 Arrays.sort(arr, (a, b) -> a[0] - b[0]);
 
 list.sort((a, b) -> a - b);
@@ -586,7 +653,10 @@ Collections.sort(list, (a, b) -> a - b);
 ```
 
 ### Math (java.lang.Math)
+
 ```java
+double a, b, x;
+
 Math.max(a, b);
 Math.min(a, b);
 
@@ -609,11 +679,15 @@ Math.signum(x);
 ## 10. OJ Input Patterns
 
 ### Single Case
+
 1. Input: one line, two integers
+
 ```
 3 5
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.util.*;
 
@@ -625,13 +699,17 @@ int b = sc.nextInt();
 ---
 
 ### EOF Loop
+
 1. Input: multiple lines, each with two integers, until EOF
+
 ```
 1 2
 3 4
 5 6
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.util.*;
 
@@ -657,14 +735,18 @@ while ((line = br.readLine()) != null) {
 ---
 
 ### Fixed T
+
 1. Input: first line T, followed by T lines of two integers
+
 ```
 3
 1 2
 3 4
 5 6
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.util.*;
 
@@ -679,11 +761,15 @@ while (T-- > 0) {
 ---
 
 ### Per-Line Variable Length
+
 1. Input: one line, variable number of integers
+
 ```
 1 2 3 4
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.io.*;
 
@@ -697,13 +783,17 @@ for (String p : parts) {
 ---
 
 ### Multi-Line Variable Length (EOF)
+
 1. Input: multiple lines, each line variable number of integers
+
 ```
 1 2 3
 4 5
 6
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.io.*;
 
@@ -720,13 +810,17 @@ while ((line = br.readLine()) != null) {
 ---
 
 ### Sentinel Termination
+
 1. Input: multiple lines, terminated by sentinel (e.g. 0 0)
+
 ```
 1 2
 3 4
 0 0
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.util.*;
 
@@ -741,11 +835,15 @@ while (true) {
 ---
 
 ### Count + Data (Same Line)
+
 1. Input: first integer n, followed by n integers in same line
+
 ```
 5 1 2 3 4 5
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.util.*;
 
@@ -759,12 +857,16 @@ for (int i = 0; i < n; i++) {
 ---
 
 ### Count + Data (Next Line)
+
 1. Input: first line n, next line contains n integers
+
 ```
 5
 1 2 3 4 5
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.io.*;
 
@@ -779,11 +881,15 @@ for (int i = 0; i < n; i++) {
 ---
 
 ### Line-Based String
+
 1. Input: one full line string
+
 ```
 hello world
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.util.*;
 
@@ -794,12 +900,16 @@ String s = sc.nextLine();
 ---
 
 ### Mixed Input
+
 1. Input: integer followed by line string
+
 ```
 3
 hello world
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.util.*;
 
@@ -812,12 +922,16 @@ String s = sc.nextLine();
 ---
 
 ### Multiple Test Cases (Line + Split)
+
 1. Input: multiple lines, each line contains space-separated integers
+
 ```
 1 2 3
 4 5 6
 ```
-3. Implementation:
+
+2. Implementation:
+
 ```java
 import java.io.*;
 
